@@ -1,24 +1,12 @@
-# flood-demo
+# arcgis-vue-demo
 
-## Project setup
+## 简介
+  基于vue3 @arcgis/core和element-plus的一个arcgis+vue3 Demo
+## 初始化
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
+## 运行
 ```
 yarn serve
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
