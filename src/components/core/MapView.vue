@@ -21,11 +21,8 @@ export default {
   components: { ClickLocation, EnableRemark, GoPosition },
   name: "MapView",
   mounted() {
-    const layer = addLayer(mapConfig.basemap);
     const map = new Map({
-      basemap: {
-        baseLayers: layer,
-      },
+      basemap: typeof mapConfig.basemap === 'string'? mapConfig.basemap: { baseLayers: addLayer(mapConfig.basemap) }
     });
     const view = new MapView({
       map,
