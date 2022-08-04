@@ -4,6 +4,7 @@
       <click-location/>
       <enable-remark/>
       <go-position/>
+      <clear-graphics/>
     </el-button-group>
   </div>
 </template>
@@ -11,14 +12,15 @@
 <script>
 import Map from "@arcgis/core/Map";
 import MapView from "@arcgis/core/views/MapView";
-import ClickLocation from '../widgets/ClickLocate.vue';
-import EnableRemark from '../widgets/EnableRemark.vue';
-import GoPosition from '../widgets/GoPosition.vue';
+import ClickLocation from '@/components/widgets/ClickLocate.vue';
+import EnableRemark from '@/components/widgets/EnableRemark.vue';
+import GoPosition from '@/components/widgets/GoPosition.vue';
+import ClearGraphics from "@/components/widgets/ClearGraphics.vue";
 import addLayer from '@/components/functions/Layer'
 import serviceConfig from "@/config/ServiceConfig";
 import mapConfig from '@/config/MapConfig'
 export default {
-  components: { ClickLocation, EnableRemark, GoPosition },
+  components: { ClickLocation, EnableRemark, GoPosition, ClearGraphics },
   name: "MapView",
   mounted() {
     const map = new Map({
