@@ -1,7 +1,20 @@
 <template>
-  <el-button @click="onClick">
-    <el-icon :size="20"><edit-pen /></el-icon>
-  </el-button>
+   <el-popover :visible="onDraw" popper-class="remark-popper" :width="150">
+    <template #reference>
+      <el-button @click="onClick">
+        <el-icon :size="20"><edit-pen /></el-icon>
+      </el-button>
+    </template>
+    <el-row>
+      <el-col :span="18">
+        <span :style="{'line-height': '24px'}">Choose Color:</span>
+      </el-col>
+      <el-col :span="6">
+        <el-color-picker v-model="color" size="small" show-alpha :predefine="predefineColors" @active-change="activeChange"/>
+      </el-col>
+    </el-row>
+    
+  </el-popover>
 </template>
 
 <script>
@@ -12,12 +25,16 @@ export default {
   data() {
     return {
       onDraw: false,
-      symbol: {
-        type: "simple-line", 
-        color: "red",
-        width: "2px",
-        style: 'solid'
-      }
+      color: '#ff4500',
+      predefineColors: [
+        '#ff4500',
+        '#ff8c00',
+        '#ffd700',
+        '#90ee90',
+        '#00ced1',
+        '#1e90ff',
+        '#c71585',
+      ]
     }
   },
   methods: {
@@ -46,7 +63,12 @@ export default {
       const line = me.createLine(vertices)
       const graphic = new Graphic({
         geometry: line,
-        symbol: me.symbol
+        symbol: {
+          type: "simple-line", 
+          color: this.color,
+          width: "2px",
+          style: 'solid'
+        }
       })
       window.view.graphics.add(graphic)
     },
@@ -67,10 +89,16 @@ export default {
       } else {
         draw.reset()
       }
-    }
+    },
+    activeChange(color) {
+      this.color = color
+    },
   }
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.remark-popper {
+  width: 20px;
+}
 </style>
