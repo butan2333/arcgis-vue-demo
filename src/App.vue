@@ -1,19 +1,8 @@
 <template>
-  <MapView/>
+  <router-view />
 </template>
 
-<script>
-import MapView from './components/core/MapView.vue'
-
-export default {
-  name: 'App',
-  components: {
-    MapView
-  }
-}
-</script>
-
-<style>
+<style lang="less">
 #app {
   width: 100%;
   height: 100%;

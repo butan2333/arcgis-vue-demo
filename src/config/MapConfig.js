@@ -1,5 +1,5 @@
 export default {
-  basemap: 'streets-vector',
+  basemap: "streets-vector",
   // {
   //   id: "basemap",
   //   title: 'basemap',
@@ -7,5 +7,5 @@ export default {
   //   serviceType: 1
   // },
   zoom: 7,
-  center: [119, 36.5]
-}
+  center: [119, 36.5],
+};

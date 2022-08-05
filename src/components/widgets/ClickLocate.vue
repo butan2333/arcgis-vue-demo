@@ -17,29 +17,29 @@
 const content = {
   test1: {
     zoom: 10,
-    center: [119, 34]
-  }
-}
+    center: [119, 34],
+  },
+};
 export default {
-  name: 'ClickLocate',
+  name: "ClickLocate",
   data() {
     return {
-      content
-    }
+      content,
+    };
   },
   methods: {
     goTo(geoInfo) {
-      window.view.goTo(geoInfo)
-    }
-  }
-}
+      window.view.goTo(geoInfo);
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
 .content {
   width: 100%;
   height: 300px;
-  >div {
+  > div {
     width: 100%;
     line-height: 30px;
     font-size: 20px;

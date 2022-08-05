@@ -6,15 +6,13 @@
 
 <script>
 export default {
-  name: 'ClearGraphics',
+  name: "ClearGraphics",
   methods: {
     onClick() {
-      window.view.graphics.removeAll()
-    }
-  }
-}
+      window.view.graphics.removeAll();
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
