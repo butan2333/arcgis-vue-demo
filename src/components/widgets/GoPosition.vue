@@ -4,7 +4,7 @@
       ><position
     /></el-icon>
   </el-button>
-  <el-dialog v-model="showDialog" title="定位" width="15%">
+  <el-dialog v-model="showDialog" title="定位" :width="300">
     <span :style="{ 'line-height': '40px' }">
       <el-space wrap>
         <el-row>
